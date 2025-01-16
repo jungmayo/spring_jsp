@@ -1,0 +1,25 @@
+package com.tenco.bank.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller // Ioc 대상( 싱글톤 패턴으로 관리된다) --> 제어의 역전
+public class MainController {
+	
+	// 주소 설계
+	// http://localhost:8080/main-Page
+	// 자원의 요청 METHOD - GET 방식
+	
+	@GetMapping({"/main-page", "/index"})
+	public String mainPage() {
+		// @Controller --> return 값을 문자열로 처리
+		// view resolve --> 
+		// prefix : /WEB-INF/view
+					//mainPage
+		// suffix : .jsp
+		// /WEB-INF/view/mainPage.jsp
+		return "/mainPage";
+	}
+	
+
+}

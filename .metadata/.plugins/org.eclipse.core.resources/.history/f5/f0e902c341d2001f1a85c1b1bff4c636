@@ -1,0 +1,4 @@
+server:
+  port: 8080
+	servlet:
+		  charset: utf-8 #서블릿

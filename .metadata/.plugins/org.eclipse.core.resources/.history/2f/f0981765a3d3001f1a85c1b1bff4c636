@@ -1,0 +1,37 @@
+package ch02;
+
+import java.util.Base64;
+
+public class StrategyTest {
+
+	public static void main(String[] args) {
+		
+		// 문자열
+		// ---> 상대방에게 문자열을 보내야 한다
+		// ----> 일반 텍스트
+		// -----> Base64 인코딩 방식
+		// ------> 특별한 방식으로 인코딩을 적용
+		
+
+	}
+	
+	
+
+} // end of class
+
+// 인코딩 전략(인터페이스가 핵심)
+interface EncodingStrategy {
+	String encode(String text);
+}
+// 바이트 010101 --> new File();
+// 서버측 데이터를 API --- json (json은 문자열)
+// Base64 인코딩
+
+
+// 어떤 문자열을 64개로 변환하는 기능이 만들어져 있음.
+class Base64Strategy implements EncodingStrategy{
+
+	@Override
+	public String encode(String text) {
+		return Base64.getEncoder().encodeToString(text.getBytes()); //getEncoder라는 객체를 얻어서 encodeToString메서드를 실행시킨// text를 바이트로 변환해서 넣어주면 됨.
+	}}
